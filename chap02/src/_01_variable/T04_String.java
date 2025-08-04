@@ -29,18 +29,7 @@ public class T04_String {
 		 *  강좌명 : java
 		 * 
 		 */
-		
-		String Str4 = "";
-		System.out.println(Str4);
-		
-		String Str5 = "";
-		System.out.println(Str5);
-		
-		String Str6 = "";
-		System.out.println(Str6);
-		
-		String Str7 = "";
-		System.out.println(Str7);
+
 	}	
 
 }
