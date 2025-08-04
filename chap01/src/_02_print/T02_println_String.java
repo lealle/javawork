@@ -13,6 +13,11 @@ public class T02_println_String {
 		System.out.println("연산결과 : "+ 5 + 8);
 		// 숫자로 인식시켜야하여 () 로 연산 시켜줘야함 
 		System.out.println("연산결과 : "+ (5 + 8));
+		// - 이어도 그러는데 - 는 아무의미 없음  x 및 나누기는 String 뒤에있어도 숫자로 인식되서 써도 Ok
+		System.out.println("연산결과 : "+ 5 * 8);
+		
+		
+
 		
 	}
 
