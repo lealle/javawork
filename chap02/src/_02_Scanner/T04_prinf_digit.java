@@ -8,11 +8,10 @@ public class T04_prinf_digit {
 		
 		System.out.println("------------------------");
 		
-		
+	
 		System.out.printf("%07d\n", 32000);
 		System.out.printf("%07d\n", 320000);
 		System.out.printf("%07d\n", 320);
-		
 		
 		System.out.println("------------------------");
 		
@@ -26,6 +25,9 @@ public class T04_prinf_digit {
 		System.out.printf("%6.2f\n", 11111123.4567);
 		System.out.printf("%6.2f\n", 123.4567);
 		System.out.printf("%6.2f\n", 23.45);
+		
+		
+		
 		
 	}
 }
