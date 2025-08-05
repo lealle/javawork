@@ -66,13 +66,15 @@ public class T00_problem_2 {
 	
 		System.out.print("문자열을 입력하세요 : ");
 		String en_string = scan1.next(); // 문자열의 단어
-		char en_string1 = en_string.charAt(0); // 인덱스 0부터 시작 -> 첫번째 글자 가져와라
-		char en_string2 = en_string.charAt(1); // 인덱스 0부터 시작 -> 첫번째 글자 가져와라
-		char en_string3 = en_string.charAt(2); // 인덱스 0부터 시작 -> 첫번째 글자 가져와라
+		char en_string1 = en_string.charAt(0); // 인덱스 0부터 시작 -> 1번째 글자 가져와라
+		char en_string2 = en_string.charAt(1); // 인덱스 1부터 시작 -> 2번째 글자 가져와라
+		char en_string3 = en_string.charAt(2); // 인덱스 2부터 시작 -> 3번째 글자 가져와라
 		
 		System.out.println("첫 번째 문자 : "+en_string1);
 		System.out.println("두 번째 문자 : "+en_string2);
 		System.out.println("세 번째 문자 : "+en_string3);
+		
+		
 		
 		
 		
