@@ -133,14 +133,12 @@ public class T00_problem {
 		System.out.print("정수를 입력하세요 : ");
 		int num000 = scan.nextInt();
 
+		//num0 == num00 && num0 == num000 로도 처리 가능
 		boolean bool0 = num0 == num00 ? 
 				num0 == num000 ? true : false
 				: false ;
 		System.out.println(bool0);
 		
-		
-		
-
 		
 	}
 }
