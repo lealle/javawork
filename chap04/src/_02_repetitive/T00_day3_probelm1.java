@@ -66,27 +66,19 @@ public class T00_day3_probelm1 {
 //				BMI가 23이상 25미만일 경우 과체중 / 25이상 30미만일 경우 비만
 //				BMI가 30이상일 경우 고도 비만
 //
-		System.out.print("키 몸무개를 공백 포함하여 입력하세요 : ");
-		double tall3= scan.nextDouble();
-		double weight3= scan.nextDouble();
 		
-		double sum = 0;
-		sum = weight3 / (tall3 * tall3);
-		
-		if(sum >= 30) {
-			System.out.println("고도 비만");			
-		} else if(sum >= 25) {
-			System.out.println("비만");
-		} else if(sum >= 23) {
-			System.out.println("과체중");
-		}else if(sum >= 18.5) {
-			System.out.println("정상제충");
-		}else {
-			System.out.println("저체중");
-		}
-			
-		
-
+		  System.out.print("키 몸무개를 공백 포함하여 입력하세요 : "); double tall3= scan.nextDouble();
+		  double weight3= scan.nextDouble();
+		  
+		  double sum = 0; sum = weight3 / ((tall3 * tall3)/10000.0);
+		  
+		  if(sum >= 30) { System.out.println("고도 비만"); } else if(sum >= 25) {
+		  System.out.println("비만"); } else if(sum >= 23) { System.out.println("과체중");
+		  }else if(sum >= 18.5) { System.out.println("정상제충"); }else {
+		  System.out.println("저체중"); }
+		  
+		  
+		 
 		
 //			4. 중간고사, 기말고사, 과제점수, 출석회수를 입력하고 Pass 또는 Fail을 출력
 //			   평가 비율은 중간고사 20%, 

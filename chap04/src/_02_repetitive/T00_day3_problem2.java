@@ -112,7 +112,7 @@ public class T00_day3_problem2 {
 		int rollnum = 0;
 		int num77 =0;
 		do {
-			int dice = (int) (Math.random()*6)+1;
+			int dice = (int) (Math.random()*6+1);
 			System.out.println("("+ dice+")");
 			
 			if(dice == 6) {
@@ -120,7 +120,7 @@ public class T00_day3_problem2 {
 			}
 			rollnum++;
 			
-		}while(num77==1);
+		}while(num77==0);
 		System.out.println("총 주사위 굴린 횟수는 : "+rollnum+"회");
 		
 		
