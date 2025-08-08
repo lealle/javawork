@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class T00_problem1 {
 
 	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
 //		1. 길이 10인 배열을 선언하고 1~10까지 반복문을 
 //		   이용하여 순서대로 넣고 출력하기
 		
@@ -21,8 +22,8 @@ public class T00_problem1 {
 //		   이용하여 역순으로 배열 인덱스에 넣고 값 출력
 //
 		int arrayInt2[] = new int[10];
-		for(int i = 10; i>0 ; i--) {
-			arrayInt1[i] = i;
+		for(int i = 10; i>1 ; i--) {
+			arrayInt2[10-i] = i;
 		}
 		
 		System.out.println(Arrays.toString(arrayInt2));
@@ -35,14 +36,14 @@ public class T00_problem1 {
 //		   1~입력받은 수를 차례대로 넣어 출력
 //
 		
-		Scanner scan = new Scanner(System.in);
-		System.out.println("배열을 입력하세요 : ");
+		
+		System.out.print("배열을 입력하세요 : ");
 		int num3 = scan.nextInt();
 		int arrayInt3[] = new int[num3];
 		for(int i = 0; i<arrayInt3.length ; i++) {
-			arrayInt1[i] = i;
+			arrayInt3[i] = i+1;
 		}
-		
+		// 0으로 받는문제
 		
 		System.out.println(Arrays.toString(arrayInt3));
 		
@@ -68,17 +69,22 @@ public class T00_problem1 {
 		char name_part = scan.next().charAt(0);
 		
 		
+		char[] finder = name.toCharArray();
+		
+		int sum5 = 0;
+		String index = "";
+		for(int i=0; i<name.length(); i++) {
+			if(finder[i] == name_part) {
+				sum5++;
+				index = index + i + " ";
+				
+			}
+		}
+		
+		System.out.println("application에 "+ name_part+"가 존재하는 위치(인덱스) : " + index );
+		System.out.println(name_part +" 개수 : "+sum5);
 		
 		
-		
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		
-		
-		
-//
 //		6. 배열에 요일(월,화,수,목,금,토,일)을 초기화하여 넣고 사용자로 부터 0~6사이의 숫자를 입력받아
 //		   숫자와 같은 요일 출력
 //		   ex.
@@ -91,7 +97,7 @@ public class T00_problem1 {
 		while(true) {
 			
 			char day[] = {'월','화','수','목','금','토','일'};
-			System.out.println("0 ~ 6 사이 숫자 입력 : ");
+			System.out.print("0 ~ 6 사이 숫자 입력 : ");
 			int num6 = scan.nextInt();
 			if( 0<=num6 && num6 <=6) {
 				System.out.println(day[num6]);
@@ -108,13 +114,14 @@ public class T00_problem1 {
 //
 		
 		int sum7 = 0;
-		System.out.println("배열의 크기를 입력 : ");
+		System.out.print("배열의 크기를 입력 : ");
 		int num7 = scan.nextInt();
 		int arrayInt7[] = new int[num7];
 		for(int i = 0; i<arrayInt7.length ; i++) {
-			System.out.println("숫자를 입력 : ");
+			System.out.print("숫자를 입력 : ");
 			int num77 = scan.nextInt();
 			arrayInt1[i] = num77;
+			sum7 +=num77;
 		}
 		
 		System.out.println("배열의 합 : "+sum7);
@@ -133,25 +140,34 @@ public class T00_problem1 {
 //		   다시 입력하세요.
 //		   정수 : 5
 //		   1, 2, 3, 2, 1
+
+		// 이런식으로도 가능 
+//		int[] iArrr = new int[num8];
+//		for(int i=0; i<iArrr.length; i++) {
+//			
+//		}
+		
+		
 		int a = 0;
 		do {
-			System.out.println("3이상인 홀수 자연수 입력 : ");
+			System.out.print("3이상인 홀수 자연수 입력 : ");
 			int num8 = scan.nextInt();
-			if(num8%2 !=0 || num8 < 3) {
+			if(num8%2 == 0 || num8 < 3) {
 				continue;
 			}
 			else {
-				for (int i=0; i < (num8/2 + 1) ; i++) {
+				a = 1;
+				for (int i=1; i <= (num8/2 + 1) ; i++) {
 					System.out.print(i+", ");
 				}
-				for (int i=(num8/2); i < 1  ; i--) {
-					if(i==1 ) {
+				for (int i=(num8/2); i >= 1  ; i--) {
+					if(i == 1) {
 						System.out.println(i);
-						a = 1;
 						break;
 					}
 					System.out.print(i+", ");
 				}
+	
 			}
 			
 		}while(a == 0);
@@ -172,8 +188,11 @@ public class T00_problem1 {
 		String[] chicken = {"양념" , "불닭", "후라이드", "고추바사삭", "황금올리브"};
 		System.out.print("치킨 이름을 입력하세요 : ");
 		String favor_chicken = scan.next();
-		for(String ch : chicken) {
-			if(favor_chicken.equals(chicken)) {
+		
+		// for (String ch : chicken) 으로 하면 안됨 왜 안되는지 알아보기
+		
+		for(int i=0; i<chicken.length; i++) {
+			if(favor_chicken.equals(chicken[i])) {
 				bool9 = true;
 			}
 		}
@@ -204,8 +223,9 @@ public class T00_problem1 {
 		for(int i=0; i<num10.length; i++) {
 			int num1010 = (int)(Math.random()*10 + 1);
 			num10[i] = num1010;
-			System.out.println(num10[i]+ " ");
+			System.out.print(num10[i]+ " ");
 		}
+		System.out.println();
 		int min = 2555;
 		int max = -2555;
 		for(int numnum : num10) {
@@ -225,26 +245,47 @@ public class T00_problem1 {
 //		11. 사용자로부터 정수값 5개 배열에 입력
 //		   오름차순 정렬로 정렬하기
 		
-		System.out.println("5개의 정수값을 입력하세요 (공백사용하여) : ");
+		//교수님이 하신 방식
+		/*
+		 * for(int i=0; i<arr.length; i++) { for(int j=0; j<arr.length-i-1; j++) {
+		 * if(arr[j+1] < arr[j]) { int c = 0; c = arr[j]; arr[j] = arr[j+1]; arr[j+1] =
+		 * c;
+		 * 
+		 * } } }
+		 */
+		
+		System.out.print("5개의 정수값을 입력하세요 (공백사용하여) : ");
 		int nume1 = scan.nextInt();
 		int nume2 = scan.nextInt();
 		int nume3 = scan.nextInt();
 		int nume4 = scan.nextInt();
 		int nume5 = scan.nextInt();
 		
-		int nume[] = {nume1, nume1, nume1, nume1, nume1};
+		int nume[] = {nume1, nume2, nume3, nume4, nume5};
 		
+		
+		// flag 정렬을 마쳤으면 종료하게 해주는 인자
+		// 그리고 flag 로 인해 원래 계속 돌아가던 코드가 count 로 얼마나 돌아갔는지 셀 수 있음 
 		for(int i = 3 ; i>0 ; i--) {
-			for(int j=0; j<i; j++) {
+//			boolean flag = false;
+//			int count = 0;
+			for(int j=0; j<=i; j++) {
+				
 				if(nume[j+1] < nume[j])
 				{
 					int c = 0;
 					c = nume[j+1];
 					nume[j+1] = nume[j];
 					nume[j] = c;
+					//flag = true
 				}
 			}
+//			count++;
+//			if(!flag)
+//				break;
 		}
+		
+		System.out.println(Arrays.toString(nume));
 
 		
 //
@@ -291,18 +332,23 @@ public class T00_problem1 {
 			for(int j=0; j< twodi_arr[i].length; j++) {
 				System.out.print(twodi_arr[i][j]+"    ");	
 			}
-			System.out.print(studentsum[i]+"     "+(double)studentsum[i]/3.0);	
+			// System.out.print(studentsum[i]+"     "+(double)studentsum[i]/3.0);	
+			System.out.printf("%d      %.1f",studentsum[i], (double)studentsum[i]/3.0);	
 			
+			System.out.println();
 		}
 		System.out.println("-----------------------------------------");
-
+		System.out.printf("총점 : %d %d %d",subjectsum[0],subjectsum[1],subjectsum[2]);
+		System.out.println();
+		System.out.printf("평균 : %.1f %.1f %.1f",subjectsum[0]/5.0,subjectsum[1]/5.0,subjectsum[2]/5.0 );
 		
 		
 		
 		
 		
+		// 
 		
-		
+		//
 		
 	}
 
