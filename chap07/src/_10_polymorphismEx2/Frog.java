@@ -1,9 +1,6 @@
 package _10_polymorphismEx2;
 
 public class Frog extends Pet {
-	String kind;
-	String color;
-	String feature;
 	Frog(){
 		super("개구리","초록색","개구쟁이");
 	}
