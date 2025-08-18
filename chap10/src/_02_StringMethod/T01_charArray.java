@@ -1,5 +1,7 @@
 package _02_StringMethod;
 
+import java.util.Scanner;
+
 public class T01_charArray {
 
 	public static void main(String[] args) {
@@ -18,9 +20,12 @@ public class T01_charArray {
 		
 		// 주민번호를 넣은 변수
 		// 123456-7 => 1,3 아면 남자
-		String ab ="123456-7";
-		char ch1 = ab.charAt(7);
-		if(ch1 == '1' || ch1 == '3') {
+		Scanner sc = new Scanner(System.in);
+		String s = sc.next();
+//		String ab ="123456-7";
+		
+		char ch1 = s.charAt(7);
+		if(ch1 == '1' || ch1 == '3') { // 혹은 스위치 구문 
 			System.out.println("남자");
 		}else {
 			System.out.println("여자");
