@@ -69,9 +69,14 @@ public class T01_calendar_get {
 		case 1:
 			System.out.print("시간 : PM ");
 		}
-		System.out.println((today.get(Calendar.HOUR)+"시"));
-		
-		
+		if(today.get(Calendar.HOUR)<10){
+			System.out.print("0"+(today.get(Calendar.HOUR)+"시"));			
+		}else {
+			System.out.print((today.get(Calendar.HOUR)+"시"));			
+				
+		}
+		System.out.print(":"+today.get(Calendar.MINUTE)+"분");
+		System.out.println(":"+today.get(Calendar.SECOND)+"초");
 		
 		
 		System.out.println();
