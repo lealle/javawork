@@ -1,9 +1,9 @@
 package _06_Ex;
 
 public class Member {
-	String name;
-	int age;
-	String gender;
+	private String name;
+	private int age;
+	private String gender;
 	Member(){}
 	public Member(String name, int age, String gender) {
 		this.name = name;
@@ -32,7 +32,7 @@ public class Member {
 	
 	@Override
 	public String toString() {
-		return "이름 : " + name + ", 나이 : " + age + ", 성별 : " + gender;
+		return "이름 : " + name + "/ 나이 : " + age + "/ 성별 : " + gender;
 	}
 	
 }

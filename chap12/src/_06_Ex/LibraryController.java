@@ -14,14 +14,19 @@ public class LibraryController {
 		this.aList = arrBook;
 	}
 
+	public LibraryController() {
+		aList.add(new Book("Java", "Lee", "프로그래밍", 20000));
+		aList.add(new Book("Spring Framework", "Kim", "프로그래밍", 30000));
+		aList.add(new Book("React Guide", "Park", "웹", 25000));
+	}
 	void info() {
 		System.out.println(m);
 	}
 
 	void insertBook() {
-		aList.add(new Book("자바의 정석", "남궁성", "도우출판"));
-		aList.add(new Book("이것이 자바다", "신용권", "한빛미디어"));
-		aList.add(new Book("모던 자바 인 액션", "Raoul-Gabriel Urma", "한빛미디어"));
+		aList.add(new Book("Java", "Lee", "프로그래밍", 20000));
+		aList.add(new Book("Spring Framework", "Kim", "프로그래밍", 30000));
+		aList.add(new Book("React Guide", "Park", "웹", 25000));
 	}
 	void insertBook(Book book) {
 		aList.add(book);
@@ -31,13 +36,38 @@ public class LibraryController {
 		return aList;
 	}
 	
-	Book searchBook(String bookTitle) {
+	ArrayList<Book> searchBook(String bookTitle) {
+		ArrayList<Book> aList1 = new ArrayList();
+		for(int i=0; i<aList.size(); i++) {
+			if(aList.isEmpty()) {
+				System.out.println("책이 없습니다.");
+				break;
+			}
+			if(aList.get(i).getTitle().contains(bookTitle)) {
+				aList1.add(aList.get(i));
+			}
+		}
+		return aList1;
+	}
+	
+	Book deleteBook(String title, String author) {
 		Book book = null;
 		for(int i=0; i<aList.size(); i++) {
-			if(bookTitle.equals(aList.get(i).getTitle())) {
-				book = aList.get(i);
+			if(aList.isEmpty()) {
+				System.out.println("책이 없습니다.");
+				break;
+			}
+			if(title.equals(aList.get(i).getTitle()) && author.equals(aList.get(i).getAuthor())) {
+				book = aList.remove(i);
 			}
 		}
 		return book;
 	}
+	
+	int ascBook() {
+		aList.sort(null);
+		return 1;
+	}
+
+
 }

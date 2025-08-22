@@ -1,17 +1,30 @@
 package _06_Ex;
 
-public class Book {
-	String title;
-	String author;
-	String publisher;
+import java.util.Objects;
+
+public class Book implements Comparable<Book>{
+	private String title;
+	private String author;
+	private String category;
+	private int price;
 	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
 	Book(){}
 	
-	public Book(String title, String author, String publisher) {
+	Book(String title, String author, String category, int price) {
 		this.title = title;
 		this.author = author;
-		this.publisher = publisher;
+		this.category = category;
+		this.price = price;
 	}
+	
 
 	public String getTitle() {
 		return title;
@@ -29,20 +42,47 @@ public class Book {
 		this.author = author;
 	}
 
-	public String getPublisher() {
-		return publisher;
-	}
+	
 
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
-	}
+
 
 	@Override
 	public String toString() {
-		return "제목 : " + title + ", 저자 : " + author + ", 출판사 : " + publisher+"\n";
+		return "제목 =" + title + "/ 저자 =" + author + "/ 범주 =" + category + "/ 가격 =" + price + "\n";
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
 	}
 	
+
+
+	@Override
+	public int compareTo(Book o) {
+		return this.getTitle().compareTo(o.getTitle());
+	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(price, author, title, category);
+	}
 	
+	@Override
+	public boolean equals(Object o) {
+		Book b1 = (Book) o;
+		if(this == o) return true;
+		if(o == null) return false;
+		if(price == b1.getPrice()&&author.equals(b1.getAuthor())&&category.equals(b1.getCategory())
+				&&title.equals( b1.getTitle())) 
+		{
+			return true;
+		}else {
+			return false;
+		}
+	}
 /*    속성 :
 		title
 		author
