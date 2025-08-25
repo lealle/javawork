@@ -31,10 +31,12 @@ public class T01_Thread {
 //		Runnable r = new Thread2();
 //		Thread t2 = new Thread(r);
 		
+		
+		
 		Thread t2 = new Thread(new Thread2()); // 한줄로 하면 
 		
-		t2.start(); // start 안됨 /
-//		t2.ru/n(); // start 안됨 
+		t2.start(); 
+//		t2.run(); // start 안됨 
 		
 		
 	}
